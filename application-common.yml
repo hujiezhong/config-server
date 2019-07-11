@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///peanutmi
+    username: root
+    password: root
+  cloud:
+    loadbalancer:
+    retry:
+      enabled: true
+  mvc:
+    static-path-pattern: /**
+  banner:
+    charset: UTF-8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+mybatis:
+  configuration:
+    auto-mapping-behavior: full
+    aggressive-lazy-loading: true   #懒加载
+    cache-enabled: true    #二级缓存
+  type-aliases-package: com.nice.entity
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
